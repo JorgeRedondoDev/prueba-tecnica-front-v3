@@ -2,7 +2,6 @@ import { REQUEST_USER, receiveUser } from "store/actions/getUsersAction";
 import { call, put, takeEvery } from "redux-saga/effects";
 
 const getUsers = async ({ page }) => {
-  console.log("getUsersSaga", page);
   try {
     const response = await fetch("https://reqres.in/api/users?page=" + page, {
       method: "GET",
