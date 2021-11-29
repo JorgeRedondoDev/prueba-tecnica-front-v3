@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { requestToken } from "../store/actions/getTokenAction";
 import { RootState } from "../store/reducers";
 import toast, { Toaster } from "react-hot-toast";
+import styled from "styled-components";
 
 function Login() {
   const dispatch = useDispatch();
@@ -10,8 +11,8 @@ function Login() {
 
   const [preventFirstCall, setPreventFirstCall] = useState(false);
   const [loginData, setlLoginData] = useState({
-    email: "",
-    password: "",
+    email: "eve.holt@reqres.in",
+    password: "cityslicka",
   });
 
   useEffect(() => {
@@ -26,7 +27,7 @@ function Login() {
         window.location.href = "/users";
       }, 1000);
     } else {
-      preventFirstCall && toast.error("emial or password invalid");
+      preventFirstCall && toast.error("Email or Password invalid");
     }
   }
 
@@ -44,26 +45,107 @@ function Login() {
   }
 
   return (
-    <form>
-      <Toaster position="top-right" />
-      Login
-      <label>
-        Email:
-        <input type="text" value={loginData.email} onChange={handleEmail} />
-      </label>
-      <label>
-        Password:
-        <input
-          type="password"
-          value={loginData.password}
-          onChange={handlePassword}
-        />
-      </label>
+    <Form>
+      <Toaster position="top-center" />
+      <h1>Login</h1>
+      <div className="inputs">
+        <label>
+          <h3>Email</h3>
+          <input type="text" value={loginData.email} onChange={handleEmail} />
+        </label>
+        <label>
+          <h3>Password</h3>
+          <input
+            type="password"
+            value={loginData.password}
+            onChange={handlePassword}
+          />
+        </label>
+      </div>
       <button type="submit" onClick={handleSummit}>
         Submit
       </button>
-    </form>
+    </Form>
   );
 }
+//Styled-component Form media query
+
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  h1 {
+    font-size: 2rem;
+    margin: 50px 0 20px 0;
+  }
+
+  .inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 10px;
+
+    label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      width: 100%;
+      height: 100%;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    input {
+      width: 100%;
+      height: 40px;
+      border-radius: 5px;
+      border: 3px solid transparent;
+      padding: 0 10px;
+      font-size: 1.2rem;
+      max-width: 400px;
+      &:focus {
+        outline: none;
+      }
+      &:hover {
+        border: 3px solid #9daaf2;
+      }
+    }
+  }
+
+  button {
+    width: 50%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 0 10px;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    max-width: 400px;
+
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      cursor: pointer;
+      background-color: #ccc;
+    }
+  }
+  @media (min-width: 800px) {
+    .inputs {
+      flex-direction: row;
+    }
+  }
+`;
 
 export default Login;
