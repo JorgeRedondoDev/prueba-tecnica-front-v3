@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { requestToken } from "../../store/actions/getTokenAction";
 import { RootState } from "../../store/reducers";
 import toast, { Toaster } from "react-hot-toast";
+import { Button } from "views/styledComponents/Button";
 import styled from "styled-components";
 
 function Login() {
@@ -63,9 +64,9 @@ function Login() {
           />
         </label>
       </div>
-      <button type="submit" onClick={handleSummit}>
+      <Button type="submit" onClick={handleSummit}>
         Submit
-      </button>
+      </Button>
     </Form>
   );
 }
@@ -126,30 +127,6 @@ const Form = styled.form`
     }
   }
 
-  button {
-    width: 50%;
-    height: 40px;
-    padding: 0 10px;
-    margin-top: 20px;
-    font-size: 1.2rem;
-    max-width: 200px;
-
-    background-color: #9daaf2;
-    box-shadow: 0px 0px 20px 1px rgba(157, 170, 242, 0.5);
-    border-radius: 5px;
-    font-size: 1em;
-    color: #f6f6f6;
-    border: 2px solid #ccc;
-
-    &:focus {
-      outline: none;
-    }
-    &:hover {
-      cursor: pointer;
-      background: #6c7bbf;
-      color: #fff;
-    }
-  }
   @media (min-width: 800px) {
     .inputs {
       flex-direction: row;

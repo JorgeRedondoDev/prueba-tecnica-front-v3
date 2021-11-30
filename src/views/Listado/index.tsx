@@ -5,6 +5,7 @@ import { RootState } from "../../store/reducers";
 import { User } from "../../types/users";
 import UserCard from "./components/UserCard";
 import UserModal from "views/Listado/components/UserModal";
+import { Button } from "views/styledComponents/Button";
 import styled from "styled-components";
 
 function Listado() {
@@ -78,22 +79,6 @@ const ContainerButtons = styled.div`
   align-items: baseline;
 `;
 
-const Button = styled.button`
-  background-color: #9daaf2;
-  box-shadow: 0px 0px 20px 1px rgba(157, 170, 242, 0.5);
-  border-radius: 5px;
-  font-size: 1em;
-  color: #f6f6f6;
-  border: 2px solid #ccc;
-
-  margin: 1em;
-  padding: 0.25em 1em;
-  &:hover {
-    cursor: pointer;
-    background: #6c7bbf;
-    color: #fff;
-  }
-`;
 const ButtonLogout = styled(Button)`
   position: fixed;
   right: 0;
