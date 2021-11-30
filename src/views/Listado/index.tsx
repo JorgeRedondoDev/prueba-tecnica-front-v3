@@ -5,7 +5,7 @@ import { RootState } from "../../store/reducers";
 import { User } from "../../types/users";
 import UserCard from "./components/UserCard";
 import UserModal from "views/Listado/components/UserModal";
-import { Button } from "views/styledComponents/Button";
+import { Button } from "Atoms/Button";
 import styled from "styled-components";
 
 function Listado() {

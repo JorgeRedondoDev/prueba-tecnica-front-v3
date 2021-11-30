@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { requestToken } from "../../store/actions/getTokenAction";
 import { RootState } from "../../store/reducers";
 import toast, { Toaster } from "react-hot-toast";
-import { Button } from "views/styledComponents/Button";
+import { Button } from "Atoms/Button";
 import styled from "styled-components";
 
 function Login() {
