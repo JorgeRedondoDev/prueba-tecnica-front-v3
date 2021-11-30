@@ -112,9 +112,11 @@ const Form = styled.form`
       height: 40px;
       border-radius: 5px;
       border: 3px solid transparent;
+      box-shadow: 0px 0px 20px 1px rgba(157, 170, 242, 0.5);
       padding: 0 10px;
       font-size: 1.2rem;
       max-width: 400px;
+
       &:focus {
         outline: none;
       }
@@ -127,19 +129,25 @@ const Form = styled.form`
   button {
     width: 50%;
     height: 40px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
     padding: 0 10px;
     margin-top: 20px;
     font-size: 1.2rem;
-    max-width: 400px;
+    max-width: 200px;
+
+    background-color: #9daaf2;
+    box-shadow: 0px 0px 20px 1px rgba(157, 170, 242, 0.5);
+    border-radius: 5px;
+    font-size: 1em;
+    color: #f6f6f6;
+    border: 2px solid #ccc;
 
     &:focus {
       outline: none;
     }
     &:hover {
       cursor: pointer;
-      background-color: #ccc;
+      background: #6c7bbf;
+      color: #fff;
     }
   }
   @media (min-width: 800px) {
