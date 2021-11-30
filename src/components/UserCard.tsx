@@ -1,14 +1,18 @@
 import React from "react";
 import { User } from "../types/users";
 import styled from "styled-components";
+import { useDispatch } from "react-redux";
+import { requestModal } from "../store/actions/modalAction";
 
 export default function UserCard({ user }: { user: User }) {
+  const dispatch = useDispatch();
+
   return (
-    <Modal>
+    <Modal onClick={() => dispatch(requestModal(user))}>
       <img src={user.avatar} alt={user.email} />
-      <Name>
+      <p>
         {user.first_name} {user.last_name}
-      </Name>
+      </p>
     </Modal>
   );
 }
@@ -40,9 +44,6 @@ const Modal = styled.div`
   }
   p {
     font-size: 20px;
+    font-weight: bold;
   }
-`;
-
-const Name = styled.p`
-  font-weight: bold;
 `;
