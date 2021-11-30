@@ -1,8 +1,13 @@
+import { Credencials } from "../../types/users";
+
 export const REQUEST_TOKEN = "REQUEST_TOKEN";
 export const RECEIVE_TOKEN = "RECEIVE_TOKEN";
 
-export const requestToken = (credencials) => ({
+export const requestToken = (credencials: Credencials) => ({
   type: REQUEST_TOKEN,
-  credencials,
+  credencials: credencials,
 });
-export const receiveToken = (token) => ({ type: RECEIVE_TOKEN, token });
+export const receiveToken = (token: String) => ({
+  type: RECEIVE_TOKEN,
+  token: token,
+});
