@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { requestModal } from "../store/actions/modalAction";
-import { RootState } from "../store/reducers";
+import { requestModal } from "../../../store/actions/modalAction";
+import { RootState } from "../../../store/reducers";
 import styled from "styled-components";
-import { User } from "../types/users";
+import { User } from "../../../types/users";
 
 export default function UserModal() {
   const dispatch = useDispatch();

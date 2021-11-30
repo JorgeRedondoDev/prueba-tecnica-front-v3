@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { requestUser } from "../store/actions/getUsersAction";
-import { RootState } from "../store/reducers";
-import UserCard from "../components/UserCard";
-import UserModal from "components/UserModal";
+import { requestUser } from "../../store/actions/getUsersAction";
+import { RootState } from "../../store/reducers";
+import { User } from "../../types/users";
+import UserCard from "./components/UserCard";
+import UserModal from "views/Listado/components/UserModal";
 import styled from "styled-components";
 
 function Listado() {
@@ -18,7 +19,9 @@ function Listado() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page]);
 
-  const users = result?.map((user) => <UserCard user={user} key={user.id} />);
+  const users = result?.map((user: User) => (
+    <UserCard user={user} key={user.id} />
+  ));
 
   return (
     <>

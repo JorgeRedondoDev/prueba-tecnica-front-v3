@@ -1,8 +1,8 @@
 import React from "react";
-import { User } from "../types/users";
+import { User } from "../../../types/users";
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
-import { requestModal } from "../store/actions/modalAction";
+import { requestModal } from "../../../store/actions/modalAction";
 
 export default function UserCard({ user }: { user: User }) {
   const dispatch = useDispatch();

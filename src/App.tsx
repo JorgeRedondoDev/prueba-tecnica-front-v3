@@ -1,6 +1,6 @@
 import React from "react";
-import Login from "pages/Login";
-import Listado from "pages/Listado";
+import Login from "views/Login";
+import Listado from "views/Listado";
 import {
   BrowserRouter as Router,
   Switch,

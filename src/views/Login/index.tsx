@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { requestToken } from "../store/actions/getTokenAction";
-import { RootState } from "../store/reducers";
+import { requestToken } from "../../store/actions/getTokenAction";
+import { RootState } from "../../store/reducers";
 import toast, { Toaster } from "react-hot-toast";
 import styled from "styled-components";
 
