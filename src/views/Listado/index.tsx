@@ -27,19 +27,14 @@ function Listado() {
   return (
     <>
       <Container>
-        {userModal.id === undefined ? null : <UserModal />}
+        {userModal?.id === undefined ? null : <UserModal />}
         <ContainerButtons>
           <Button onClick={() => (page > 1 ? setPage(page - 1) : null)}>
-            <span role="img" aria-label="previous">
-              ⏪ page
-            </span>
+            Previous page
           </Button>
           {page}
           <Button onClick={() => (page < 2 ? setPage(page + 1) : null)}>
-            page{" "}
-            <span role="img" aria-label="next">
-              ⏩
-            </span>
+            Next page
           </Button>
         </ContainerButtons>
 
@@ -50,14 +45,10 @@ function Listado() {
           }}
         >
           Logout
-          <span role="img" aria-label="close">
-            ❌
-          </span>
         </ButtonLogout>
       </Container>
-
-      {result === undefined ? (
-        <div>Loading...</div>
+      {result[0]?.id === undefined ? (
+        <div data-testid="loading">Loading...</div>
       ) : (
         <UserCardContainer>{users}</UserCardContainer>
       )}
