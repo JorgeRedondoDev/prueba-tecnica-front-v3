@@ -48,7 +48,7 @@ function Login() {
 
   return (
     <Form>
-      <Toaster position="top-center" />
+      <Toaster position="top-center" data-testid="modal" />
       <h1>Login</h1>
       <div className="inputs">
         <label>
@@ -64,7 +64,7 @@ function Login() {
           />
         </label>
       </div>
-      <Button type="submit" onClick={handleSummit}>
+      <Button type="submit" onClick={handleSummit} data-testid="login_button">
         Submit
       </Button>
     </Form>
