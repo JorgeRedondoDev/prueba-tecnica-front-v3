@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 
 const App = () => {
+  // Fake auth token
   const isLogged: Boolean =
     localStorage?.getItem("token") === "QpwL5tke4Pnpja7X4";
 

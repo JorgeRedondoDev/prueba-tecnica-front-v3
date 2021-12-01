@@ -11,7 +11,6 @@ const GlobalStyle = createGlobalStyle`
     background-color: #1A2238;
     color: #fff;
     font-family: 'Roboto Condensed', sans-serif;
-
   }
 `;
 
